@@ -3,9 +3,11 @@ import jQuery from 'jquery'
 // ドルマークに参照を代入(慣習的な $ を使うため)
 const $ = jQuery
 
+const $myText = $('#myText')
+
 // テキストを取得
-const text = $('#myText').text()
-$('#myText')
+const text = $myText.text()
+$myText
   .empty() // 一旦、空にする
   .show() // 表示する
 
@@ -15,7 +17,7 @@ const elements = []
 // 一文字ずつ、spanタグで包む
 arr.map((str, index) => {
   elements[index] = $(`<span>${str}</span>`)
-  $('#myText').append(elements[index]) // 元の場所に挿入
+  $myText.append(elements[index]) // 元の場所に挿入
 })
 
 // エフェクトの適用
